@@ -8,12 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Random;
+
 @RestController
 public class Index {
 
     @RequestMapping(value = "/testRest", method = RequestMethod.GET, produces = "application/json")
     public Person testRest() {
-        Person person = new Person("test", 1l);
+        Random rand = new Random();
+        Person person = new Person("test", rand.nextLong());
 
         return person;
 
