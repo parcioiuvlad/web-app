@@ -3,10 +3,7 @@ package controller;
  * Created by vlad on 6/7/2015.
  */
 import model.Person;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Random;
 
@@ -20,6 +17,12 @@ public class Index {
 
         return person;
 
+    }
+
+    @RequestMapping(value = "/testRestPost", method = RequestMethod.POST, consumes = "application/json")
+    @ResponseBody
+    public void testRestPost(@RequestBody Person person) {
+        System.out.println(person.getName());
     }
 
 }

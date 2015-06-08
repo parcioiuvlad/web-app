@@ -7,6 +7,14 @@ app.controller('mainController', ['$scope', '$http', 'testRest', function($scope
     }
 
     $scope.click2 = function() {
-        console.log(testRest.success);
+        var person = {
+            name: $scope.input,
+            age: 0
+        }
+        $http.post('/web-app/testRestPost', person).
+        success(function(data, status, headers, config) {
+            console.log('success');
+        });
+        console.log($scope.input);
     }
 }])

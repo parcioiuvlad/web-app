@@ -2,9 +2,12 @@
 <body ng-app="index">
     <div ng-controller="mainController">
         <button ng-click="click()">click</button>
-        <button ng-click="click2()">click2</button>
 
         <span>{{ person.age }}</span>
+        </br>
+
+        <input id="input" type="text" ng-model="input">
+        <button ng-click="click2()">click2</button>
     </div>
 </body>
 
