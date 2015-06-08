@@ -17,4 +17,10 @@ app.controller('mainController', ['$scope', '$http', 'testRest', function($scope
         });
         console.log($scope.input);
     }
+
+    $scope.click3 = function() {
+        $http.get('/web-app/testRestList').success(function(data){
+            $scope.list = data;
+        });
+    }
 }])

@@ -6,8 +6,14 @@
         <span>{{ person.age }}</span>
         </br>
 
+        <button ng-click="click3()">click3</button>
+        <span ng-repeat="element in list">{{element}}</br></span>
+
+        </br>
+
         <input id="input" type="text" ng-model="input">
         <button ng-click="click2()">click2</button>
+
     </div>
 </body>
 

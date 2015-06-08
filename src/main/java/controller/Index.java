@@ -5,6 +5,8 @@ package controller;
 import model.Person;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 @RestController
@@ -17,6 +19,16 @@ public class Index {
 
         return person;
 
+    }
+
+    @RequestMapping(value = "/testRestList", method = RequestMethod.GET, produces = "application/json")
+    public List<Long> testRestList() {
+        ArrayList<Long> results = new ArrayList<Long>();
+        Random rand = new Random();
+        for(int i=0;i<10;i++) {
+            results.add(rand.nextLong());
+        }
+        return results;
     }
 
     @RequestMapping(value = "/testRestPost", method = RequestMethod.POST, consumes = "application/json")
