@@ -1,8 +1,9 @@
-app.controller('mainController', ['$scope', '$http', 'testRest', function($scope, $http, testRest) {
+app.controller('mainController', ['$scope', '$http','asd', 'indexService',
+    function($scope, $http, asd, indexService) {
+
     $scope.click = function() {
-         $http.get('/web-app/testRest').success(function(data) {
-              console.log(data);
-              $scope.person = data;
+         indexService.testRest().success(function(data) {
+             $scope.person = data;
          });
     }
 
@@ -11,15 +12,15 @@ app.controller('mainController', ['$scope', '$http', 'testRest', function($scope
             name: $scope.input,
             age: 0
         }
-        $http.post('/web-app/testRestPost', person).
-        success(function(data, status, headers, config) {
+        indexService.testRestPost(person).success(function(data){
             console.log('success');
         });
+        console.log();
         console.log($scope.input);
     }
 
     $scope.click3 = function() {
-        $http.get('/web-app/testRestList').success(function(data){
+        indexService.testRestList().success(function(data){
             $scope.list = data;
         });
     }
