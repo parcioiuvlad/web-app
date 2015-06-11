@@ -25,3 +25,11 @@ app.controller('mainController', ['$scope', '$http','asd', 'indexService',
         });
     }
 }])
+
+app.controller('template1Controller', ['$scope', function($scope){
+    $scope.message = 'template1';
+}]);
+
+app.controller('template2Controller', ['$scope', function($scope){
+    $scope.message = 'template2';
+}])
