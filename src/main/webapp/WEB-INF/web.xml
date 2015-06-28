@@ -12,10 +12,10 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>/resources/*</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>default</servlet-name>-->
+        <!--<url-pattern>/resources/*</url-pattern>-->
+    <!--</servlet-mapping>-->
 
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
